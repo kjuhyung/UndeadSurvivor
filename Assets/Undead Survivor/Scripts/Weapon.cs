@@ -26,6 +26,21 @@ public class Weapon : MonoBehaviour
                 break;
         }
 
+        // ..Test code
+        if (Input.GetButtonDown("Jump"))
+        {
+            LevelUp(20, 5);
+        }
+
+    }
+    
+    public void LevelUp(float damage, int count)
+    {
+        this.damage = damage;
+        this.count += count;
+
+        if (id == 0)
+            Batch();
     }
     public void Init()
     {
@@ -44,8 +59,21 @@ public class Weapon : MonoBehaviour
     {        
         for (int index=0; index<count; index++)
         {
-            Transform bullet = GameManager.instance.pool.Get(prefabId).transform;
-            bullet.parent = transform;
+            Transform bullet;
+            // 기존 오브젝트를 먼저 활용
+            if (index < transform.childCount)
+            {
+                bullet = transform.GetChild(index);
+            }
+            // 모자란 것을 풀매니저에서 가져오기
+            else
+            {
+                bullet = GameManager.instance.pool.Get(prefabId).transform;
+                bullet.parent = transform;
+            }
+
+            bullet.localPosition = Vector3.zero;
+            bullet.localRotation = Quaternion.identity;
 
             //rotVec 변수, 360을 count로 나눈 값으로 오브젝트 배치
             Vector3 rotVec = Vector3.forward * 360 * index / count;
