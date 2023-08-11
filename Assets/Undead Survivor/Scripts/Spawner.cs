@@ -17,7 +17,8 @@ public class Spawner : MonoBehaviour
     {
         // Mathf.Floor , Ceil 소수점 아래를 버리고 Int 형으로 바꾸는 함수
         timer += Time.deltaTime;
-        level = Mathf.FloorToInt(GameManager.instance.gameTime / 10f);        
+        level = Mathf.Min(Mathf.FloorToInt
+            (GameManager.instance.gameTime / 10f),spwanData.Length -1);        
 
         if (timer > spwanData[level].spawnTime)
         {            
