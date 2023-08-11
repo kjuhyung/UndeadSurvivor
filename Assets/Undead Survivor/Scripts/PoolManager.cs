@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PullManager : MonoBehaviour
+public class PoolManager : MonoBehaviour
 {
     //프리펩들을 보관할 변수
     public GameObject[] prefabs;
@@ -20,5 +20,33 @@ public class PullManager : MonoBehaviour
         {
             pools[index] = new List<GameObject>();
         }
+    }
+
+    public GameObject Get(int index)
+    {
+        GameObject select = null;
+        // 선택한 비활성화된 게임오브젝트 접근
+            
+        foreach (GameObject mob in pools[index])
+        {
+            if (!mob.activeSelf)
+            // 발견하면 select 변수에 할당
+            {
+                select = mob;
+                select.SetActive(true);
+                break;
+            }
+        }
+
+        // 다 활성화 되있으면
+        if (!select)
+        {
+            // 새롭게 생성해서 select 변수에 할당
+            select = Instantiate(prefabs[index], transform);
+            pools[index].Add(select);
+        }
+
+
+        return select;
     }
 }
