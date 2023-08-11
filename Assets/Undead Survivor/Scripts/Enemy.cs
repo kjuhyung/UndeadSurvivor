@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour
     {
         if (!isLive)
             return;      
-
         
         // 위치차이를 구해서 타겟방향으로 이동
         Vector2 dirVec = target.position - rigid.position;
@@ -37,5 +36,11 @@ public class Enemy : MonoBehaviour
     void LateUpdate()
     {
         spriter.flipX = target.position.x < rigid.position.x;
+    }
+
+    // 활성화 될때마다 target 을 정해주기
+    void OnEnable()
+    {
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
     }
 }
