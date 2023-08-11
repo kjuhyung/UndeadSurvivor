@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public Transform[] spawnPoint;
+    public SpwanData[] spwanData;
 
     int level;
     float timer;
@@ -30,4 +31,16 @@ public class Spawner : MonoBehaviour
         enemy.transform.position
             = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
     }
+}
+
+//직렬화 - 개체를 저장 혹은 전송하기 위해 변환 , 속성 []
+[System.Serializable]
+public class SpwanData
+{
+    //스폰데이터 라는 클래스 추가
+    // 추가할 속성들 - 타입,소환시간,체력,속도
+    public int spriteType;
+    public float spawnTime;
+    public int health;
+    public float speed;
 }
