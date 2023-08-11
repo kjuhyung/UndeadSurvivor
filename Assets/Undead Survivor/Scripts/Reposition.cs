@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Reposition : MonoBehaviour
 {
+    Collider2D coll;
+
+    void Awake()
+    {
+      coll = GetComponent<Collider2D>();
+    }
 
     //유니티에서 제공하는 함수, 태그가 다른 오브젝트끼리의 충돌 시 구현되는 함수
     //트리거가 체크된 콜라이더에서 나갔을 때    
@@ -13,7 +19,7 @@ public class Reposition : MonoBehaviour
         if (!collision.CompareTag("Area"))
             return;
 
-        //플레이어의 위치와 땅(나)의 위치를 변수로 지정
+        //플레이어의 위치와 나의 위치를 변수로 지정
         Vector3 playerPos = GameManager.instance.player.transform.position;
         Vector3 myPos = transform.position;
 
@@ -29,7 +35,7 @@ public class Reposition : MonoBehaviour
         // swithch ~ case : 값의 상태에 따라 로직을 나눠주는 키워드
         switch (transform.tag)
         {
-            // 그라운드 일때, 두 오브젝트의 거리 차이에서
+            // 태그가 그라운드 - 두 오브젝트의 거리 차이에서
             // x축과 y축의 차이를 비교해서 수평,수직 이동하는 로직
             case "Ground":
                 if (diffX > diffY)
@@ -42,7 +48,13 @@ public class Reposition : MonoBehaviour
                 }
                 break;
 
+                // 태그가 에너미
             case "Enemy":
+                if (coll.enabled)
+                {
+                    transform.Translate(playerDir * 20
+                        + new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f));
+                }
 
                 break;
         }
