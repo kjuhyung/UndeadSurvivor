@@ -27,12 +27,12 @@ public class PoolManager : MonoBehaviour
         GameObject select = null;
         // 선택한 비활성화된 게임오브젝트 접근
             
-        foreach (GameObject mob in pools[index])
+        foreach (GameObject item in pools[index])
         {
-            if (!mob.activeSelf)
+            if (!item.activeSelf)
             // 발견하면 select 변수에 할당
             {
-                select = mob;
+                select = item;
                 select.SetActive(true);
                 break;
             }

@@ -39,8 +39,8 @@ public class SpwanData
 {
     //스폰데이터 라는 클래스 추가
     // 추가할 속성들 - 타입,소환시간,체력,속도
-    public int spriteType;
     public float spawnTime;
+    public int spriteType;    
     public int health;
     public float speed;
 }

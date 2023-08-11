@@ -6,17 +6,22 @@ public class Enemy : MonoBehaviour
 {
     // 속도,목표,생존여부 를 위한 변수 선언
     public float speed;
+    public float health;
+    public float maxHealth;
+    public RuntimeAnimatorController[] animcon;
     public Rigidbody2D target;
 
-    bool isLive = true;
+    bool isLive;
 
     // 선언
+    Animator anim;
     Rigidbody2D rigid;
     SpriteRenderer spriter;
 
     void Awake()
     {
         //초기화
+        anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
     }
@@ -42,5 +47,15 @@ public class Enemy : MonoBehaviour
     void OnEnable()
     {
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+        isLive = true;
+        health = maxHealth;
+    }
+
+    public void Init(SpwanData data)
+    {
+        anim.runtimeAnimatorController = animcon[data.spriteType];
+        speed = data.speed;
+        maxHealth = data.health;
+        health = data.health;
     }
 }
