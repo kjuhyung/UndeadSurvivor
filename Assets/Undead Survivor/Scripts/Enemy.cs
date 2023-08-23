@@ -25,6 +25,12 @@ public class Enemy : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
     }
+    void OnEnable()
+    {
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+        isLive = true;
+        health = maxHealth;
+    }
 
     void FixedUpdate()
     {
@@ -44,12 +50,7 @@ public class Enemy : MonoBehaviour
     }
 
     // 활성화 될때마다 target 을 정해주기
-    void OnEnable()
-    {
-        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
-        isLive = true;
-        health = maxHealth;
-    }
+    
 
     public void Init(SpwanData data)
     {
