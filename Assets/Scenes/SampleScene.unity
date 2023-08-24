@@ -5033,10 +5033,11 @@ GameObject:
   m_Component:
   - component: {fileID: 560048272}
   - component: {fileID: 560048271}
+  - component: {fileID: 560048277}
   - component: {fileID: 560048273}
   - component: {fileID: 560048274}
   - component: {fileID: 560048275}
-  - component: {fileID: 560048277}
+  - component: {fileID: 560048278}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5212,6 +5213,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &560048278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560048270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c563f69fa5254ac44806c49bf36c796f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scanRange: 5
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  nearestTarget: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

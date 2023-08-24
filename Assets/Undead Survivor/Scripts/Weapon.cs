@@ -26,11 +26,11 @@ public class Weapon : MonoBehaviour
                 break;
         }
 
-        // ..Test code
-        if (Input.GetButtonDown("Jump"))
-        {
-            LevelUp(20, 5);
-        }
+        //// ..Test code
+        //if (Input.GetButtonDown("Jump"))
+        //{
+        //    LevelUp(20, 5);
+        //}
 
     }
     
