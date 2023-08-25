@@ -32,6 +32,8 @@ public class Spawner : MonoBehaviour
         enemy.transform.position
             = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
         enemy.GetComponent<Enemy>().Init(spwanData[level]);
+        // 오브젝트 풀에서 가져온 오브젝트에서 Enemy 컴포넌트 접근
+        // Init 호출하고 소환데이터 인자값 전달
     }
 }
 
