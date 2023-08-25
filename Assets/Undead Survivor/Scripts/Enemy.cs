@@ -56,9 +56,11 @@ public class Enemy : MonoBehaviour
     }
     void LateUpdate()
     {
-        if (!isLive)
-            return;
-        spriter.flipX = target.position.x < rigid.position.x;
+        if (isLive)
+        {
+            spriter.flipX = target.position.x < rigid.position.x;
+        }
+        
     }
 
     // 활성화 될때마다 target 을 정해주기
