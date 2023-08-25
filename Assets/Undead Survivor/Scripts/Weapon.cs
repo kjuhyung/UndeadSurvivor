@@ -34,7 +34,7 @@ public class Weapon : MonoBehaviour
                 timer += Time.deltaTime;
                 if(timer > speed)
                 {
-                    timer = 0f;
+                    timer = 0f; // 타이머 변수를 추가해서 연사속도 기능
                     Fire();
                 }
                 break;
@@ -104,7 +104,7 @@ public class Weapon : MonoBehaviour
             return;
         Vector3 targetPos = player.scanner.nearestTarget.position;
         Vector3 dir = targetPos - transform.position;
-        dir = dir.normalized; // 현재 방향은 유지하고 크기를 1로 변환
+        dir = dir.normalized; // 현재 방향은 유지하고 값을 1로 변환
 
         Transform bullet = GameManager.instance.pool.Get(prefabId).transform;
         bullet.position = transform.position; // 현재 위치에 총알 생성
