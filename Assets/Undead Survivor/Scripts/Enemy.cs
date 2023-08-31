@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Bullet"))
+        if (!collision.CompareTag("Bullet") || !isLive)
             return;
 
         health -= collision.GetComponent<Bullet>().damage;
@@ -93,7 +93,9 @@ public class Enemy : MonoBehaviour
             coll.enabled = false;        // 콜라이더 비활성화
             rigid.simulated = false;     // 리지드바디 비활성화
             spriter.sortingOrder = 1;    // Order in layer 2에서 1로 변경
-            anim.SetBool("Dead",true);   // 애니메이터의 파라미터 변경            
+            anim.SetBool("Dead",true);   // 애니메이터의 파라미터 변경
+            GameManager.instance.kill++;
+            GameManager.instance.GetExp();
         }  
     }
     // 코루틴 (Coroutine) - 생명주기와 비동기처럼 실행되는 함수
