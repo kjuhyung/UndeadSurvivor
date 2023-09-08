@@ -56,8 +56,13 @@ public class Weapon : MonoBehaviour
         if (id == 0)
             Batch();
     }
-    public void Init()
+    public void Init(ItemData data)
     {
+        // Basic Set
+        name = "Weapon " + data.itemId;
+        transform.parent = player.transform;
+
+        // Property Set
         switch (id)
         {
             case 0:
