@@ -47,13 +47,11 @@ public class Item : MonoBehaviour
                     nextCount += data.counts[level];
 
                     weapon.LevelUp(nextDamage, nextCount);
-
                 }
                 break;                            
             case ItemData.ItemType.Glove:
-                break;
             case ItemData.ItemType.Shoe:
-                break;
+                break;            
             case ItemData.ItemType.Heal:
                 break;
         }
