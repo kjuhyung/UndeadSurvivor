@@ -51,6 +51,8 @@ public class Weapon : MonoBehaviour
 
         if (id == 0)
             Batch();
+
+        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
     public void Init(ItemData data)
     {
@@ -83,6 +85,8 @@ public class Weapon : MonoBehaviour
                 speed = 0.3f; // 연사 속도
                 break;
         }
+
+        player.BroadcastMessage("ApplyGear",SendMessageOptions.DontRequireReceiver);
     }
 
     void Batch() // 오브젝트 배치 함수 생성
