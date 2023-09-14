@@ -86,6 +86,15 @@ public class Weapon : MonoBehaviour
                 break;
         }
 
+        // Hand Set
+        Hand hand = player.hands[(int)data.itemType];
+        // 근접무기면 왼손, 원거리 무기면 오른손
+        hand.spriter.sprite = data.hand;
+        // sprite 이미지 data에 넣어놓은 이미지로 변경
+        hand.gameObject.SetActive(true);
+
+        
+
         player.BroadcastMessage("ApplyGear",SendMessageOptions.DontRequireReceiver);
     }
 
