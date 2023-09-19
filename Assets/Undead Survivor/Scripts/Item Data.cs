@@ -4,9 +4,12 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "Item",menuName ="Scriptble Object/ItemData")]
+    // 에셋 폴더안에 파일로 만들 수 있게 하는 코드
 public class ItemData : ScriptableObject
 {
     public enum ItemType { Melee, Range, Glove, Shoe, Heal }
+
+    // 관리할 아이템들의 속성들 변수 선언
 
     [Header("# Main Info")]
     public ItemType itemType;

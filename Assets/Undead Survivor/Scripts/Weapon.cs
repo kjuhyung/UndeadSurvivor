@@ -53,6 +53,8 @@ public class Weapon : MonoBehaviour
             Batch();
 
         player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
+        // player의 자식 오브젝트들에게 특정 함수 호출을 방송한다.
+        // LevelUp 할 때 ApplayGear() 라는 메서드를 실행시킨다.
     }
     public void Init(ItemData data)
     {
@@ -66,6 +68,7 @@ public class Weapon : MonoBehaviour
         damage = data.baseDamage;
         count = data.baseCount;
 
+
         for (int i = 0; i<GameManager.instance.pool.prefabs.Length; i++)
         {
             if(data.projectile == GameManager.instance.pool.prefabs[i])
@@ -74,6 +77,8 @@ public class Weapon : MonoBehaviour
                 break;
             }
         }
+
+        // Item data 를 받아와서 초기화하기
 
         switch (id)
         {
@@ -91,11 +96,11 @@ public class Weapon : MonoBehaviour
         // 근접무기면 왼손, 원거리 무기면 오른손
         hand.spriter.sprite = data.hand;
         // sprite 이미지 data에 넣어놓은 이미지로 변경
-        hand.gameObject.SetActive(true);
-
-        
+        hand.gameObject.SetActive(true);        
 
         player.BroadcastMessage("ApplyGear",SendMessageOptions.DontRequireReceiver);
+        // player의 자식 오브젝트들에게 특정 함수 호출을 방송한다.
+        // Init - 무기를 새로 생성할 때 ApplayGear() 라는 메서드를 실행시킨다.
     }
 
     void Batch() // 오브젝트 배치 함수 생성

@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         scanner = GetComponent<Scanner>();
         hands = GetComponentsInChildren<Hand>(true);
+        // 비활성화 되어있어도 가져오는 키워드 (true) 인자값 전달
     }
 
     void Update()
