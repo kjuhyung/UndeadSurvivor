@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -28,11 +29,12 @@ public class GameManager : MonoBehaviour
     }
 
     void Start()
-    {
+    {        
         health = maxHealth;
 
         // 임시 스크립트
         UILevelUp.Select(0);
+        IsLive = true;
     }
     void Update()
     {
