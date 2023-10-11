@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.instance.IsLive) return;
         //inputVec의 x,y값 지정      
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
@@ -32,6 +34,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate() // 물리 연산 프레임마다 호출되는 생명주기 함수
     {
+        if (!GameManager.instance.IsLive) return;
         //입력값,속도,시간을 곱한 값으로 rigid 를 이용해 움직임 구현
         Vector2 nextVec = inputVec * speed * Time.fixedDeltaTime;    
         rigid.MovePosition(rigid.position + nextVec);
@@ -39,6 +42,7 @@ public class Player : MonoBehaviour
     
     void LateUpdate() // update 가 끝나고 프레임이 종료 되기 전 실행되는 생명주기 함수
     {
+        if (!GameManager.instance.IsLive) return;
         anim.SetFloat("Speed",inputVec.magnitude);
 
         // flipx,y 를 움직이는 방향에 따라 on,off 해주는 코드

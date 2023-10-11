@@ -21,6 +21,7 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.instance.IsLive) return;
         switch (id)
         {
             case 0:

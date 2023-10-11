@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!GameManager.instance.IsLive) return;
         // anim. 애니메이션 현재 상태정보 가 Hit
         // isLive 가 false 거나 Hit 상태면 아래 이동 로직을 실행 안하기
         if (!isLive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
@@ -56,10 +57,12 @@ public class Enemy : MonoBehaviour
     }
     void LateUpdate()
     {
-        if (isLive)
-        {
-            spriter.flipX = target.position.x < rigid.position.x;
-        }
+        if (!GameManager.instance.IsLive) return;
+
+        if (!isLive) return;    
+        
+        spriter.flipX = target.position.x < rigid.position.x;
+        
         
     }
 

@@ -15,6 +15,7 @@ public class Spawner : MonoBehaviour
     }
     void Update()
     {
+        if (!GameManager.instance.IsLive) return;
         // Mathf.Floor , Ceil 소수점 아래를 버리고 Int 형으로 바꾸는 함수
         timer += Time.deltaTime;
         level = Mathf.Min(Mathf.FloorToInt
