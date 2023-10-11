@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     public float speed;
     public Scanner scanner;
     public Hand[] hands;
+    public RuntimeAnimatorController[] animCon;
     public GameObject healthSlider;
 
     Rigidbody2D rigid; // 선언
@@ -20,6 +21,11 @@ public class Player : MonoBehaviour
         scanner = GetComponent<Scanner>();
         hands = GetComponentsInChildren<Hand>(true);
         // 비활성화 되어있어도 가져오는 키워드 (true) 인자값 전달
+    }
+
+    private void OnEnable()
+    {
+        anim.runtimeAnimatorController = animCon[GameManager.instance.playerID];
     }
 
     void Update()
