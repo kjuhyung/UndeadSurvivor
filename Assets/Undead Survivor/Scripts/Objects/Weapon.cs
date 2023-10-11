@@ -67,7 +67,7 @@ public class Weapon : MonoBehaviour
         // Property Set
         id = data.itemId;
         damage = data.baseDamage * Character.Damage;
-        count = data.baseCount * Character.Count;
+        count = data.baseCount + Character.Count;
 
 
         for (int i = 0; i<GameManager.instance.pool.prefabs.Length; i++)
@@ -88,7 +88,7 @@ public class Weapon : MonoBehaviour
                 Batch();
                 break;
             default:
-                speed = 0.4f * Character.WeaponRate; // 연사 속도
+                speed = 0.5f * Character.WeaponRate; // 연사 속도
                 break;
         }
 
