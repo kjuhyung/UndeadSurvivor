@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     public float speed;
     public Scanner scanner;
     public Hand[] hands;
+    public GameObject healthSlider;
 
     Rigidbody2D rigid; // ¼±¾ð
     SpriteRenderer spriter;
@@ -65,6 +66,8 @@ public class Player : MonoBehaviour
             }
 
             anim.SetTrigger("Dead");
+            healthSlider.SetActive(false);
+            GameManager.instance.GameOver();
         }
     }
 }

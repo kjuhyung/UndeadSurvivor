@@ -1,5 +1,6 @@
-using System.ComponentModel;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class GameManager : MonoBehaviour
     public PoolManager pool;
     public Player player;
     public LevelUp UILevelUp;
-   
+    public GameObject UIResult;   
 
     void Awake()
     {
@@ -36,6 +37,28 @@ public class GameManager : MonoBehaviour
         UILevelUp.Select(0);
         IsLive = true;
     }
+
+    public void GameOver()
+    {
+        StartCoroutine(nameof(GameOverRoutine));
+    }
+
+    IEnumerator GameOverRoutine()
+    {
+        IsLive = false;
+
+        yield return new WaitForSeconds(0.5f);
+
+        UIResult.SetActive(true);
+        Stop();
+    }
+
+    public void GameRetry()
+    {
+        SceneManager.LoadScene(1);
+        Resume();
+    }
+
     void Update()
     {
         if (!IsLive) return;

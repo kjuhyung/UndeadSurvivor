@@ -17,7 +17,7 @@ public class StartScene : MonoBehaviour
 
     public void OnClickStartBtn()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene(1);
     }
 
 }
