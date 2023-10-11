@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -51,7 +48,23 @@ public class Player : MonoBehaviour
             spriter.flipX = inputVec.x < 0;
         }
         //if (inputVec.y != 0)        
-        //spriter.flipY = inputVec.y > 0;
-        
+        //spriter.flipY = inputVec.y > 0;        
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!GameManager.instance.IsLive) return;
+
+        GameManager.instance.health -= Time.deltaTime * 10;
+
+        if(GameManager.instance.health < 0)
+        {
+            for(int i = 2; i <transform.childCount; i++)
+            {
+                transform.GetChild(i).gameObject.SetActive(false);
+            }
+
+            anim.SetTrigger("Dead");
+        }
     }
 }
