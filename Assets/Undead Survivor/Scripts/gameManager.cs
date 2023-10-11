@@ -22,7 +22,8 @@ public class GameManager : MonoBehaviour
     public PoolManager pool;
     public Player player;
     public LevelUp UILevelUp;
-    public GameObject UIResult;   
+    public Result UIResult;
+    public GameObject enemyCleaner;
 
     void Awake()
     {
@@ -35,7 +36,7 @@ public class GameManager : MonoBehaviour
 
         // 임시 스크립트
         UILevelUp.Select(0);
-        IsLive = true;
+        Resume();
     }
 
     public void GameOver()
@@ -49,7 +50,25 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        UIResult.SetActive(true);
+        UIResult.gameObject.SetActive(true);
+        UIResult.Lose();
+        Stop();
+    }
+
+    public void GameVictory()
+    {
+        StartCoroutine(nameof(GameVictoryRoutine));
+    }
+
+    IEnumerator GameVictoryRoutine()
+    {
+        IsLive = false;
+        enemyCleaner.SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        UIResult.gameObject.SetActive(true);
+        UIResult.Win();
         Stop();
     }
 
@@ -68,11 +87,14 @@ public class GameManager : MonoBehaviour
         if (gameTime > maxGameTime)
         {
             gameTime = maxGameTime;
+            GameVictory();
         }
     }
 
     public void GetExp() // 경험치를 얻는 메서드
     {
+        if (!IsLive) return;
+
         exp++;
         if (exp == nextExp[Mathf.Min(level,nextExp.Length-1)])
         {
