@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -20,6 +18,7 @@ public class GameManager : MonoBehaviour
     [Header("# Game Object")]
     public PoolManager pool;
     public Player player;
+    public LevelUp UILevelUp;
    
 
     void Awake()
@@ -48,6 +47,7 @@ public class GameManager : MonoBehaviour
         {
             level++;
             exp = 0;
+            UILevelUp.Show();
         }
     }
 }
