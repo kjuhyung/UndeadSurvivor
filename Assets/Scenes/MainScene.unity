@@ -5091,19 +5091,19 @@ CompositeCollider2D:
   - m_Collider: {fileID: 129635709}
     m_ColliderPaths:
     - - X: 100000000
-        Y: 100000000
+        Y: 200000000
       - X: -100000000
-        Y: 100000000
+        Y: 200000000
       - X: -100000000
-        Y: -100000000
+        Y: -200000000
       - X: 100000000
-        Y: -100000000
+        Y: -200000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 9.99997, y: -10}
-      - {x: 9.99997, y: 10}
-      - {x: -10, y: 9.99997}
-      - {x: -9.99997, y: -10}
+    - - {x: 9.99997, y: -20}
+      - {x: 9.99997, y: 20}
+      - {x: -10, y: 19.999971}
+      - {x: -9.99997, y: -20}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -6781,8 +6781,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 28}
-  m_SizeDelta: {x: 125, y: 8}
+  m_AnchoredPosition: {x: 0, y: 32}
+  m_SizeDelta: {x: 122, y: 7}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &599607580
 MonoBehaviour:
@@ -7098,7 +7098,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -65.75758, y: 19.383558}
+  m_AnchoredPosition: {x: -60, y: 24}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &636237025
@@ -7912,7 +7912,7 @@ MonoBehaviour:
   level: 0
   kill: 0
   exp: 0
-  nextExp: 03000000050000000a0000001e0000003c0000006400000096000000d20000001801000090010000
+  nextExp: 0a0000001400000028000000460000006e000000a0000000dc0000002201000072010000f4010000
   pool: {fileID: 1164226070}
   player: {fileID: 560048275}
   UILevelUp: {fileID: 1864126230}
@@ -8201,19 +8201,19 @@ CompositeCollider2D:
   - m_Collider: {fileID: 753546619}
     m_ColliderPaths:
     - - X: 100000000
-        Y: 100000000
+        Y: 200000000
       - X: -100000000
-        Y: 100000000
+        Y: 200000000
       - X: -100000000
-        Y: -100000000
+        Y: -200000000
       - X: 100000000
-        Y: -100000000
+        Y: -200000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 9.99997, y: -10}
-      - {x: 9.99997, y: 10}
-      - {x: -10, y: 9.99997}
-      - {x: -9.99997, y: -10}
+    - - {x: 9.99997, y: -20}
+      - {x: 9.99997, y: 20}
+      - {x: -10, y: 19.999971}
+      - {x: -9.99997, y: -20}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -13098,7 +13098,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 65.75759, y: 19.383558}
+  m_AnchoredPosition: {x: 60, y: 24}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &931984008
@@ -13245,19 +13245,19 @@ CompositeCollider2D:
   - m_Collider: {fileID: 938501524}
     m_ColliderPaths:
     - - X: 100000000
-        Y: 100000000
+        Y: 200000000
       - X: -100000000
-        Y: 100000000
+        Y: 200000000
       - X: -100000000
-        Y: -100000000
+        Y: -200000000
       - X: 100000000
-        Y: -100000000
+        Y: -200000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 9.99997, y: -10}
-      - {x: 9.99997, y: 10}
-      - {x: -10, y: 9.99997}
-      - {x: -9.99997, y: -10}
+    - - {x: 9.99997, y: -20}
+      - {x: 9.99997, y: 20}
+      - {x: -10, y: 19.999971}
+      - {x: -9.99997, y: -20}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -17800,67 +17800,19 @@ CompositeCollider2D:
   - m_Collider: {fileID: 990671183}
     m_ColliderPaths:
     - - X: 100000000
-        Y: 100119992
+        Y: 200000000
       - X: -100000000
-        Y: 100119992
+        Y: 200000000
       - X: -100000000
-        Y: 70084000
+        Y: -200000000
       - X: 100000000
-        Y: 70084000
-    - - X: 100000000
-        Y: 70083992
-      - X: -100000000
-        Y: 70083992
-      - X: -100000000
-        Y: 50060000
-      - X: 100000000
-        Y: 50060000
-    - - X: 100000000
-        Y: 50059996
-      - X: -100000000
-        Y: 50059996
-      - X: -100000000
-        Y: 30036002
-      - X: 100000000
-        Y: 30036002
-    - - X: 100000000
-        Y: 30035996
-      - X: -100000000
-        Y: 30035996
-      - X: -100000000
-        Y: -30035996
-      - X: 100000000
-        Y: -30035996
-    - - X: 100000000
-        Y: -30036002
-      - X: -100000000
-        Y: -30036002
-      - X: -100000000
-        Y: -50059996
-      - X: 100000000
-        Y: -50059996
-    - - X: 100000000
-        Y: -50060000
-      - X: -100000000
-        Y: -50060000
-      - X: -100000000
-        Y: -70083992
-      - X: 100000000
-        Y: -70083992
-    - - X: 100000000
-        Y: -70084000
-      - X: -100000000
-        Y: -70084000
-      - X: -100000000
-        Y: -100119992
-      - X: 100000000
-        Y: -100119992
+        Y: -200000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 9.99997, y: -10.011999}
-      - {x: 9.99997, y: 10.011999}
-      - {x: -10, y: 10.01197}
-      - {x: -9.99997, y: -10.011999}
+    - - {x: 9.99997, y: -20}
+      - {x: 9.99997, y: 20}
+      - {x: -10, y: 19.999971}
+      - {x: -9.99997, y: -20}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -22084,7 +22036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 19.383558}
+  m_AnchoredPosition: {x: 0, y: 20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1000265180
@@ -22428,7 +22380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 4}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1070536210
@@ -23053,7 +23005,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 9, y: 0}
-  m_SizeDelta: {x: 160, y: 8}
+  m_SizeDelta: {x: 60, y: 8}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1349035196
 MonoBehaviour:
