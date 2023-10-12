@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
     // 활성화 될때마다 target 을 정해주기
     
 
-    public void Init(SpwanData data)
+    public void Init(SpawnData data)
     {
         anim.runtimeAnimatorController = animcon[data.spriteType];
         speed = data.speed;

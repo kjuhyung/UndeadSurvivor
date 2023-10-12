@@ -6192,7 +6192,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 7.5555553
+  orthographic size: 9.722222
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6781,8 +6781,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 27.383558}
-  m_SizeDelta: {x: 135.51515, y: 7}
+  m_AnchoredPosition: {x: 0, y: 28}
+  m_SizeDelta: {x: 125, y: 8}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &599607580
 MonoBehaviour:
@@ -7864,15 +7864,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: []
-  spwanData:
-  - spawnTime: 0.7
+  spawnData:
+  - spawnTime: 0.5
     spriteType: 0
-    health: 10
-    speed: 1.5
-  - spawnTime: 0.2
-    spriteType: 1
     health: 15
+    speed: 1.5
+  - spawnTime: 0.3
+    spriteType: 1
+    health: 20
     speed: 2.4
+  levelTime: 0
 --- !u!1 &710665267
 GameObject:
   m_ObjectHideFlags: 0
@@ -7904,14 +7905,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsLive: 0
   gameTime: 0
-  maxGameTime: 20
+  maxGameTime: 180
   playerID: 0
   health: 0
   maxHealth: 100
   level: 0
   kill: 0
   exp: 0
-  nextExp: 03000000050000000a0000006400000096000000d20000001801000068010000c201000058020000
+  nextExp: 03000000050000000a0000001e0000003c0000006400000096000000d20000001801000090010000
   pool: {fileID: 1164226070}
   player: {fileID: 560048275}
   UILevelUp: {fileID: 1864126230}
@@ -22427,7 +22428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -6}
+  m_AnchoredPosition: {x: 0, y: 4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1070536210
@@ -24034,7 +24035,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 25, y: 25}
+  m_Size: {x: 20, y: 20}
   m_EdgeRadius: 0
 --- !u!1 &1563435604
 GameObject:
@@ -24707,7 +24708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10000
-  per: -1
+  per: -100
 --- !u!61 &1722775256
 BoxCollider2D:
   m_ObjectHideFlags: 0

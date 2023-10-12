@@ -22,9 +22,7 @@ public class Reposition : MonoBehaviour
         //플레이어의 위치와 나의 위치를 변수로 지정
         Vector3 playerPos = GameManager.instance.player.transform.position;
         Vector3 myPos = transform.position;
-
-       
-
+             
         // swithch ~ case : 값의 상태에 따라 로직을 나눠주는 키워드
         switch (transform.tag)
         {
@@ -32,8 +30,8 @@ public class Reposition : MonoBehaviour
             // x축과 y축의 차이를 비교해서 수평,수직 이동하는 로직
             case "Ground":
                 // x,y 의 차이 변수 지정 , 절대값이여야 하므로 Mathf.Abs  
-                float diffX = Mathf.Abs(playerPos.x - myPos.x);
-                float diffY = Mathf.Abs(playerPos.y - myPos.y);
+                float diffX = playerPos.x - myPos.x;
+                float diffY = playerPos.y - myPos.y;
 
                 // player 의 방향 변수 지정, 대각선일때 1.4 이므로 -1 또는 1로 만들기
                 float dirX = diffX < 0 ? -1 : 1;

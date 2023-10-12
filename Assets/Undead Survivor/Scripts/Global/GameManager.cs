@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [Header("# Game Control")] // 인스펙터의 속성들을 구분시켜주는 타이틀
     public bool IsLive;
     public float gameTime;
-    public float maxGameTime = 2 * 10f;
+    public float maxGameTime;
     [Header("# Player Info")]
     public int playerID;
     public float health;
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public int level;
     public int kill;
     public int exp;
-    public int[] nextExp = { 3, 5, 10, 100, 150, 210, 280, 360, 450, 600 };
+    public int[] nextExp;
     // 레벨, 킬수, 경험치 변수      
     [Header("# Game Object")]
     public PoolManager pool;
