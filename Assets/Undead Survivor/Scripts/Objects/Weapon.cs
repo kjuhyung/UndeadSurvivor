@@ -146,5 +146,7 @@ public class Weapon : MonoBehaviour
         // 지정된 축을 중심으로 목표를 향해 회전하는 함수
         bullet.GetComponent<Bullet>().Init(damage, count, dir);
 
+        AudioManager.instance.PlaySFX(AudioManager.SFX.Range);
+
     }
 }

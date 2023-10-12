@@ -89,6 +89,7 @@ public class Enemy : MonoBehaviour
         {
             // ..Live, Hit Action
             anim.SetTrigger("Hit"); // 애니메이터의 트리거 작동
+            AudioManager.instance.PlaySFX(AudioManager.SFX.Hit);
         }
         else
         {
@@ -99,6 +100,11 @@ public class Enemy : MonoBehaviour
             anim.SetBool("Dead",true);   // 애니메이터의 파라미터 변경
             GameManager.instance.kill++;
             GameManager.instance.GetExp();
+
+            if(GameManager.instance.IsLive)
+            {
+                AudioManager.instance.PlaySFX(AudioManager.SFX.Dead);
+            }                
         }  
     }
     // 코루틴 (Coroutine) - 생명주기와 비동기처럼 실행되는 함수
