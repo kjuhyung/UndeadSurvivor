@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     public Result UIResult;
     public GameObject enemyCleaner;
 
+    public Transform UIJoy;
+
     void Awake()
     {
         instance = this;
@@ -119,12 +121,14 @@ public class GameManager : MonoBehaviour
     {
         IsLive = false;
         Time.timeScale = 0;
+        UIJoy.localScale = Vector3.zero;
     }
 
     public void Resume()
     {
         IsLive = true;
         Time.timeScale = 1;
+        UIJoy.localScale = Vector3.one;
     }
 }
 

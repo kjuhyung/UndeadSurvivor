@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -32,9 +33,9 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (!GameManager.instance.IsLive) return;
-        //inputVec의 x,y값 지정      
-        inputVec.x = Input.GetAxisRaw("Horizontal");
-        inputVec.y = Input.GetAxisRaw("Vertical");
+        // inputVec의 x,y값 지정      
+        // inputVec.x = Input.GetAxisRaw("Horizontal");
+        // inputVec.y = Input.GetAxisRaw("Vertical");
     }
 
     void FixedUpdate() // 물리 연산 프레임마다 호출되는 생명주기 함수
@@ -76,5 +77,10 @@ public class Player : MonoBehaviour
             healthSlider.SetActive(false);
             GameManager.instance.GameOver();
         }
+    }
+
+    void OnMove(InputValue value)
+    {
+        inputVec = value.Get<Vector2>();
     }
 }
