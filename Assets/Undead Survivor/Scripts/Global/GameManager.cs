@@ -91,6 +91,11 @@ public class GameManager : MonoBehaviour
         Resume();
     }
 
+    public void GameQuit()
+    {
+        Application.Quit();
+    }
+
     void Update()
     {
         if (!IsLive) return;
