@@ -23,14 +23,7 @@ public class Reposition : MonoBehaviour
         Vector3 playerPos = GameManager.instance.player.transform.position;
         Vector3 myPos = transform.position;
 
-        // x,y 의 차이 변수 지정 , 절대값이여야 하므로 Mathf.Abs  
-        float diffX = Mathf.Abs(playerPos.x - myPos.x);
-        float diffY = Mathf.Abs(playerPos.y - myPos.y);
-
-        // player 의 방향 변수 지정, 대각선일때 1.4 이므로 -1 또는 1로 만들기
-        Vector3 playerDir = GameManager.instance.player.inputVec; // 1 -1 1.4 
-        float dirX = playerDir.x < 0 ? -1 : 1;
-        float dirY = playerDir.y < 0 ? -1 : 1;
+       
 
         // swithch ~ case : 값의 상태에 따라 로직을 나눠주는 키워드
         switch (transform.tag)
@@ -38,6 +31,17 @@ public class Reposition : MonoBehaviour
             // 태그가 그라운드 - 두 오브젝트의 거리 차이에서
             // x축과 y축의 차이를 비교해서 수평,수직 이동하는 로직
             case "Ground":
+                // x,y 의 차이 변수 지정 , 절대값이여야 하므로 Mathf.Abs  
+                float diffX = Mathf.Abs(playerPos.x - myPos.x);
+                float diffY = Mathf.Abs(playerPos.y - myPos.y);
+
+                // player 의 방향 변수 지정, 대각선일때 1.4 이므로 -1 또는 1로 만들기
+                float dirX = diffX < 0 ? -1 : 1;
+                float dirY = diffY < 0 ? -1 : 1;
+
+                diffX = Mathf.Abs(diffX);
+                diffY = Mathf.Abs(diffY);
+
                 if (diffX > diffY)
                 {
                     transform.Translate(Vector3.right * dirX * 40);
@@ -52,8 +56,9 @@ public class Reposition : MonoBehaviour
             case "Enemy":
                 if (coll.enabled)
                 {
-                    transform.Translate(playerDir * 20
-                        + new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f));
+                    Vector3 dist = playerPos - myPos;
+                    Vector3 ran = new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0);
+                    transform.Translate(ran + dist * 2);
                 }
 
                 break;
