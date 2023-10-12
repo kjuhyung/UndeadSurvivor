@@ -5091,19 +5091,19 @@ CompositeCollider2D:
   - m_Collider: {fileID: 129635709}
     m_ColliderPaths:
     - - X: 100000000
-        Y: 200000000
+        Y: 100000000
       - X: -100000000
-        Y: 200000000
+        Y: 100000000
       - X: -100000000
-        Y: -200000000
+        Y: -100000000
       - X: 100000000
-        Y: -200000000
+        Y: -100000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 9.99997, y: -20}
-      - {x: 9.99997, y: 20}
-      - {x: -10, y: 19.999971}
-      - {x: -9.99997, y: -20}
+    - - {x: 9.99997, y: -10}
+      - {x: 9.99997, y: 10}
+      - {x: -10, y: 9.99997}
+      - {x: -9.99997, y: -10}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -6136,7 +6136,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -6192,7 +6192,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 12.444445
+  orthographic size: 8.577778
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6813,7 +6813,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 7}
+  m_SizeDelta: {x: 0, y: 13}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &599607580
 MonoBehaviour:
@@ -7129,7 +7129,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.5, y: -8}
+  m_AnchoredPosition: {x: 1, y: -15}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &636237025
@@ -8023,7 +8023,7 @@ MonoBehaviour:
   level: 0
   kill: 0
   exp: 0
-  nextExp: 050000000a0000001e0000003c0000006400000096000000d20000001801000072010000f4010000
+  nextExp: 050000000a0000001400000028000000460000006e000000a0000000dc0000002201000072010000
   pool: {fileID: 1164226070}
   player: {fileID: 560048275}
   UILevelUp: {fileID: 1864126230}
@@ -8313,19 +8313,19 @@ CompositeCollider2D:
   - m_Collider: {fileID: 753546619}
     m_ColliderPaths:
     - - X: 100000000
-        Y: 200000000
+        Y: 100000000
       - X: -100000000
-        Y: 200000000
+        Y: 100000000
       - X: -100000000
-        Y: -200000000
+        Y: -100000000
       - X: 100000000
-        Y: -200000000
+        Y: -100000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 9.99997, y: -20}
-      - {x: 9.99997, y: 20}
-      - {x: -10, y: 19.999971}
-      - {x: -9.99997, y: -20}
+    - - {x: 9.99997, y: -10}
+      - {x: 9.99997, y: 10}
+      - {x: -10, y: 9.99997}
+      - {x: -9.99997, y: -10}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -12621,6 +12621,55 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &778731833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 778731835}
+  - component: {fileID: 778731834}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &778731834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778731833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: a6e95cdba4823784eae5456a3ef2c2c1, type: 2}
+--- !u!4 &778731835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778731833}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 223.41809, y: 447.11, z: -0.46922302}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &831688729
 GameObject:
   m_ObjectHideFlags: 0
@@ -13287,7 +13336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5, y: -8}
+  m_AnchoredPosition: {x: -1, y: -15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &931984008
@@ -13434,19 +13483,19 @@ CompositeCollider2D:
   - m_Collider: {fileID: 938501524}
     m_ColliderPaths:
     - - X: 100000000
-        Y: 200000000
+        Y: 100000000
       - X: -100000000
-        Y: 200000000
+        Y: 100000000
       - X: -100000000
-        Y: -200000000
+        Y: -100000000
       - X: 100000000
-        Y: -200000000
+        Y: -100000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 9.99997, y: -20}
-      - {x: 9.99997, y: 20}
-      - {x: -10, y: 19.999971}
-      - {x: -9.99997, y: -20}
+    - - {x: 9.99997, y: -10}
+      - {x: 9.99997, y: 10}
+      - {x: -10, y: 9.99997}
+      - {x: -9.99997, y: -10}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -17989,19 +18038,19 @@ CompositeCollider2D:
   - m_Collider: {fileID: 990671183}
     m_ColliderPaths:
     - - X: 100000000
-        Y: 200000000
+        Y: 100000000
       - X: -100000000
-        Y: 200000000
+        Y: 100000000
       - X: -100000000
-        Y: -200000000
+        Y: -100000000
       - X: 100000000
-        Y: -200000000
+        Y: -100000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 9.99997, y: -20}
-      - {x: 9.99997, y: 20}
-      - {x: -10, y: 19.999971}
-      - {x: -9.99997, y: -20}
+    - - {x: 9.99997, y: -10}
+      - {x: 9.99997, y: 10}
+      - {x: -10, y: 9.99997}
+      - {x: -9.99997, y: -10}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -22225,7 +22274,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -20}
+  m_AnchoredPosition: {x: 0, y: -30}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1000265180
@@ -22547,7 +22596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1058419032
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23284,7 +23333,7 @@ RectTransform:
   m_Father: {fileID: 598665958}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -26384,7 +26433,7 @@ RectTransform:
   m_Father: {fileID: 201908757}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -27000,3 +27049,4 @@ SceneRoots:
   - {fileID: 766845825}
   - {fileID: 714654895}
   - {fileID: 1722775257}
+  - {fileID: 778731835}
